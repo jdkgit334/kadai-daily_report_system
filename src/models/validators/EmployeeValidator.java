@@ -3,6 +3,8 @@ package models.validators;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import models.Employee;
 import utils.DBUtil;
 
@@ -35,7 +37,7 @@ public class EmployeeValidator {
         }
 
         if(code_duplicate_check_flag) {
-            EntityManamger em = DBUtil.createEntityManager();
+            EntityManager em = DBUtil.createEntityManager();
             long employees_count = (long)em.createNamedQuery("checkRegisteredCode", Long.class)
                                                 .setParameter("code", code)
                                                 .getSingleResult();
