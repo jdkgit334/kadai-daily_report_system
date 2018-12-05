@@ -52,7 +52,7 @@ public class Report {
     private Timestamp created_at;
 
     @Column(name = "updated_at", nullable = false)
-    private Timestamp updated_ate;
+    private Timestamp updated_at;
 
     public Integer getId() {
         return id;
@@ -102,12 +102,12 @@ public class Report {
         this.created_at = created_at;
     }
 
-    public Timestamp getUpdated_ate() {
-        return updated_ate;
+    public Timestamp getUpdated_at() {
+        return updated_at;
     }
 
-    public void setUpdated_ate(Timestamp updated_ate) {
-        this.updated_ate = updated_ate;
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
     }
 
 

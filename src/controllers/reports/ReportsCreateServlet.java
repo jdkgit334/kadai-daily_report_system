@@ -38,7 +38,7 @@ public class ReportsCreateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String _token = (String)request.getParameter("_token");
-		if(_token !=null && _token.equals(request.getSession().getId())) {
+		if(_token != null && _token.equals(request.getSession().getId())) {
 		    EntityManager em = DBUtil.createEntityManager();
 		    System.out.println(request.getParameter("report_date"));
 
@@ -58,7 +58,7 @@ public class ReportsCreateServlet extends HttpServlet {
 
 		    Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 		    r.setCreated_at(currentTime);
-		    r.setUpdated_ate(currentTime);
+		    r.setUpdated_at(currentTime);
 
 		    List<String> errors = ReportValidator.validate(r);
 		    if(errors.size() > 0) {
